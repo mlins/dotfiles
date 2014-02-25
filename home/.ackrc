@@ -1,0 +1,10 @@
+--type-set=jst=.jst
+--type-set=coffee=.coffee
+--type-set=handlebars=.handlebars
+--type-set=sass=.scss,.sass
+
+--nosql
+--sort-files
+--ignore-dir=coverage
+--ignore-dir=tmp
+--ignore-dir=log

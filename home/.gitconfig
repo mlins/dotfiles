@@ -1,0 +1,16 @@
+[user]
+  name = Matt Lins
+  email = mattlins@gmail.com
+[color]
+  diff = auto
+  ui = true
+[apply]
+  whitespace = nowarn
+[alias]
+  l = "!. ~/.githelpers && pretty_git_log"
+[github]
+  user = mlins
+[push]
+  default = current
+[core]
+  editor = /usr/local/bin/vim

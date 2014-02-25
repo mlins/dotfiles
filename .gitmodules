@@ -1,0 +1,3 @@
+[submodule "home/.janus/airline"]
+	path = home/.janus/airline
+	url = https://github.com/mlins/vim-airline.git

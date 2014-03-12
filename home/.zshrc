@@ -52,7 +52,7 @@ plugins=(git rbenv vi-mode history-substring-search pow brew gem knife last-work
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH=$PATH:./bin:/usr/local/bin
+export PATH=./bin:$PATH:/usr/local/bin:~/bin
 export EDITOR='vim'
 
 # history

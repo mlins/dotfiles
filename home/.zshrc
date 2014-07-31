@@ -67,3 +67,9 @@ bindkey '^R' history-incremental-search-backward
 
 # aliases
 alias ls="ls -lh"
+
+# added by travis gem
+[ -f /Users/mlins/.travis/travis.sh ] && source /Users/mlins/.travis/travis.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

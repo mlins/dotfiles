@@ -8,3 +8,4 @@
 --ignore-dir=coverage
 --ignore-dir=tmp
 --ignore-dir=log
+--ignore-dir=source_maps

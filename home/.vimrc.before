@@ -5,5 +5,7 @@ let g:vroom_cucumber_path = 'cucumber'
 
 let mapleader = ","
 
+nnoremap <leader>. :CtrlPTag<cr>
+
 set undofile
 set undodir=~/.vim/undo

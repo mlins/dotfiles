@@ -43,3 +43,5 @@ alias lta='lt -a'
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+eval $(thefuck --alias)

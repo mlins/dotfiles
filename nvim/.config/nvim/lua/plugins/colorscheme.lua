@@ -1,16 +1,32 @@
+-- return {
+--   {
+--     "folke/tokyonight.nvim",
+--     lazy = true,
+--     opts = {
+--       style = "night",
+--     },
+--   },
+--
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "tokyonight",
+--     },
+--   },
+-- }
 return {
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
     lazy = true,
     opts = {
-      style = "night",
+      style = "Mocha",
     },
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
     },
   },
 }

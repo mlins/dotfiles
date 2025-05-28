@@ -2,4 +2,4 @@
 nvim/.config/nvim/lazy-lock.json
 
 # IDE/Editor files
-.cursor/
+# .cursor/ - removed to allow tracking cursor rules

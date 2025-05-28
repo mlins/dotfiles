@@ -1,0 +1,87 @@
+---
+description: GNU stow operations
+globs:
+alwaysApply: false
+---
+# GNU Stow Operations Guide
+
+## Basic Stow Commands
+
+### Installing (Stowing) Packages
+```bash
+# Preview changes before applying
+stow --no <package>
+
+# Install a package
+stow <package>
+
+# Install multiple packages
+stow zsh nvim wezterm
+
+# Install from different directory
+stow -d /path/to/dotfiles -t ~ <package>
+```
+
+### Removing (Unstowing) Packages
+```bash
+# Remove a package
+stow -D <package>
+
+# Remove and reinstall (useful for updates)
+stow -R <package>
+```
+
+### Verbose Output
+```bash
+# See detailed operations
+stow --verbose <package>
+stow --verbose --no <package>  # Preview with details
+```
+
+## Troubleshooting Common Issues
+
+### Conflict Resolution
+- **Existing files**: Backup and remove conflicting files before stowing
+- **Broken symlinks**: Clean up with `stow -D <package>` then `stow <package>`
+- **Permission issues**: Ensure write access to target directories
+
+### Directory Structure Validation
+- Verify package structure mirrors target layout
+- Check for typos in directory names
+- Ensure no overlapping files between packages
+
+### Testing Strategy
+1. Always use `stow --no <package>` first to preview
+2. Test in isolated environment when possible
+3. Verify symlinks point to correct locations
+4. Test application functionality after stowing
+
+## Advanced Usage
+
+### Ignore Files
+Create `.stow-local-ignore` in package root to exclude files:
+```
+# Ignore README files
+README.*
+# Ignore backup files
+*.bak
+```
+
+### Target Directory Override
+```bash
+# Stow to different target
+stow -t /custom/target <package>
+```
+
+### Simulation Mode
+```bash
+# See what would happen without making changes
+stow --simulate <package>
+```
+
+## Best Practices
+- Keep packages independent and non-conflicting
+- Use descriptive package names matching applications
+- Test stow operations before committing changes
+- Document any manual steps required after stowing
+- Regularly verify symlink integrity

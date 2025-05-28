@@ -1,0 +1,57 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Git Commit Conventions and Best Practices
+
+⚠️  **CRITICAL: Git commit titles MUST be under 50 characters - NO EXCEPTIONS!**
+
+## Commit Message Format
+- **ALWAYS** keep commit message titles under 50 characters (strictly enforced)
+- Use imperative mood in commit titles (e.g., "Fix bug" not "Fixed bug")
+- Separate title from body with a blank line
+- Wrap body lines at 72 characters
+- Use the body to explain what and why, not how
+
+## Multi-line Commit Messages
+When using `run_terminal_cmd` for git commits, use this format:
+```
+git commit -m "Short title under 50 chars
+
+Detailed explanation in the body:
+- Bullet points for multiple changes
+- Explain the reasoning behind changes
+- Reference any issues or tickets"
+```
+
+## Technical Constraints for AI Agents
+- **TECHNICAL CONSTRAINT**: `run_terminal_cmd` does NOT allow newlines in command parameter
+- **SOLUTION**: Use multiple `-m` flags for multi-line commits:
+  ```bash
+  git commit -m "Short title" -m "Body line 1" -m "Body line 2" -m "Body line 3"
+  ```
+- **NEVER** try to put newlines directly in the command string
+
+## Examples
+
+### GOOD commit titles:
+- "Fix user authentication bug"
+- "Add password reset feature"
+- "Update styling for mobile"
+- "Refactor database queries"
+- "Remove deprecated methods"
+
+### BAD commit titles (too long):
+- "Fix user authentication bug by updating the session handling logic and adding proper error messages"
+- "Add password reset feature with email validation, token generation, and comprehensive error handling"
+
+## Commit Checklist
+Follow this checklist every time:
+1. Write title - count characters, MUST be ≤50
+2. Use multiple `-m` flags, NO newlines in command
+3. Format: `git commit -m "Title" -m "Detail 1" -m "Detail 2"`
+4. Verify title length before executing
+
+## References
+Follow these conventions: https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

@@ -1,0 +1,44 @@
+---
+description: Neovim, LazyVim, nvim configuration dotfiles
+globs:
+alwaysApply: false
+---
+# Neovim Configuration - LazyVim Guidelines
+
+When working with Neovim configuration files in this dotfiles project:
+
+## LazyVim Conventions
+- Follow LazyVim plugin structure and naming conventions
+- Use `lua/config/` for core configuration files
+- Use `lua/plugins/` for plugin specifications
+- Keep `lazy-lock.json` updated for reproducible plugin versions
+
+## File Organization
+- `init.lua` - Entry point, should be minimal
+- `lua/config/options.lua` - Neovim options
+- `lua/config/keymaps.lua` - Custom keymaps
+- `lua/config/autocmds.lua` - Autocommands
+- `lua/plugins/` - Plugin specifications (one per file or grouped logically)
+
+## Code Style
+- Use 2-space indentation consistently
+- Group related settings with comments
+- Use descriptive variable names
+- Add comments for complex plugin configurations
+
+## Plugin Management
+- Each plugin should have its own file in `lua/plugins/` or be logically grouped
+- Include plugin dependencies and version constraints when needed
+- Document any custom plugin configurations
+- Test plugin changes before committing
+
+## Performance Considerations
+- Use lazy loading for plugins when appropriate
+- Avoid heavy computations in init files
+- Profile startup time with `:Lazy profile` when making changes
+
+## Best Practices
+- Keep configurations modular and reusable
+- Use LazyVim's built-in keymaps when possible
+- Document any deviations from LazyVim defaults
+- Test configurations across different file types

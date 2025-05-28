@@ -1,0 +1,111 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Dotfiles Project - GNU Stow Management
+
+You are working on a personal dotfiles repository managed with GNU Stow. This project contains configuration files for various applications organized as stow packages.
+
+## Project Structure
+- Each top-level directory represents a stow package (e.g., `zsh/`, `nvim/`, `wezterm/`, `ghostty/`, `zellij/`, `p10k/`)
+- Files within each package mirror the target directory structure (e.g., `zsh/.zshrc` will be symlinked to `~/.zshrc`)
+- Some packages use nested `.config/` directories for XDG-compliant applications
+
+## Key Principles
+
+### File Organization
+- Keep each application's configuration in its own stow package directory
+- Maintain the exact directory structure that should exist in the home directory
+- Use descriptive names for stow packages that match the application name
+
+### Configuration Management
+- Prefer modular configuration files over monolithic ones
+- Use comments to explain complex configurations
+- Keep sensitive information out of version control
+- Document any manual setup steps required after stowing
+
+### Stow Best Practices
+- Each package should be self-contained and independently stowable
+- Avoid conflicts between packages (no overlapping file paths)
+- Use `.stow-local-ignore` files when needed to exclude certain files from stowing
+- Test stow operations with `--no` flag first to preview changes
+
+## File Types and Conventions
+
+### Shell Configuration (zsh/)
+- Use `.zshrc` for interactive shell configuration
+- Use `.zprofile` for login shell setup
+- Organize complex configurations into sourced modules
+- Include performance considerations for shell startup time
+
+### Neovim Configuration (nvim/)
+- Follow LazyVim conventions when applicable
+- Use Lua for configuration files
+- Organize plugins logically in separate files
+- Include lazy-lock.json for reproducible plugin versions
+
+### Terminal Emulators (wezterm/, ghostty/)
+- Use application-specific configuration formats
+- Include font and color scheme preferences
+- Document any OS-specific configurations
+
+### Development Tools
+- Keep tool-specific configurations in appropriate packages
+- Use standard configuration file names and locations
+- Include version information in comments when relevant
+
+## Code Style Guidelines
+
+### Lua Files (Neovim)
+- Use 2-space indentation
+- Follow LazyVim naming conventions
+- Add comments for complex plugin configurations
+- Group related settings together
+
+### Shell Scripts
+- Use proper shebang lines
+- Include error handling
+- Add comments for complex logic
+- Follow POSIX compatibility when possible
+
+### Configuration Files
+- Use consistent indentation (2 or 4 spaces)
+- Group related settings with comments
+- Include examples for complex options
+- Document any dependencies or requirements
+
+## Common Tasks
+
+### Adding New Application
+1. Create new directory with application name
+2. Set up proper directory structure mirroring target location
+3. Add configuration files
+4. Test with `stow --no <package>` first
+5. Document any manual setup steps
+
+### Updating Configurations
+- Test changes in isolation before committing
+- Consider backward compatibility
+- Update documentation if behavior changes
+- Verify stow operations still work correctly
+
+### Troubleshooting
+- Use `stow --verbose` for detailed output
+- Check for conflicting files before stowing
+- Verify symlinks are created correctly
+- Test configurations in clean environment when possible
+
+## Security Considerations
+- Never commit API keys, passwords, or tokens
+- Use environment variables for sensitive data
+- Consider using separate private repository for sensitive configs
+- Review changes before committing to avoid accidental exposure
+
+## Documentation
+- Include README files for complex packages
+- Document any manual setup steps
+- Explain non-obvious configuration choices
+- Keep installation/setup instructions up to date
+
+When working on this project, prioritize maintainability, modularity, and clear organization. Each change should make the dotfiles easier to manage and deploy across different systems.

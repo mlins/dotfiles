@@ -1,0 +1,41 @@
+---
+description: zsh configuration dotfiles
+globs:
+alwaysApply: false
+---
+# Shell Configuration Guidelines
+
+When working with shell configuration files:
+
+## Zsh Configuration Structure
+- `.zshrc` - Interactive shell configuration (aliases, functions, prompt)
+- `.zprofile` - Login shell setup (environment variables, PATH)
+- Keep configurations modular by sourcing separate files when complex
+
+## Performance Best Practices
+- Minimize startup time by avoiding heavy operations in `.zshrc`
+- Use lazy loading for tools that aren't always needed
+- Profile shell startup with `time zsh -i -c exit` to identify bottlenecks
+- Consider using `zsh-defer` for non-critical initializations
+
+## Code Organization
+- Group related configurations with clear comments
+- Use functions for complex logic instead of inline commands
+- Keep aliases simple and memorable
+- Document any non-obvious configurations
+
+## Environment Variables
+- Set PATH and other environment variables in `.zprofile`
+- Use conditional checks for tool availability before adding to PATH
+- Keep sensitive variables in separate, non-versioned files
+
+## Powerlevel10k (p10k)
+- Use `p10k configure` to generate initial configuration
+- Keep custom modifications minimal and well-documented
+- Test prompt performance with different git repository states
+
+## Best Practices
+- Test shell configurations in clean environments
+- Use POSIX-compatible syntax when possible for portability
+- Add error handling for optional tool integrations
+- Document any manual setup steps required after stowing

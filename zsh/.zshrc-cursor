@@ -1,0 +1,34 @@
+# Minimal .zshrc for Cursor Agent Mode
+# This file provides essential development tools without complex prompts or themes
+
+# Simple, clean prompt that Cursor can easily parse
+PROMPT='%n@%m:%~$ '
+RPROMPT=''
+
+# Essential environment setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Basic history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# Essential aliases (no colors or icons to avoid confusion)
+alias ll='ls -la'
+alias la='ls -la'
+
+# Editor
+export EDITOR="code"
+
+# Windsurf path
+export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
+
+# Disable any complex features that might interfere
+unsetopt beep
+setopt no_auto_menu
+setopt no_menu_complete

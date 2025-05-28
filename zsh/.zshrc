@@ -1,6 +1,13 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
+# For Cursor: Use dedicated minimal zshrc to avoid agent hanging while keeping dev tools
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  source ~/.zshrc-cursor
+  return
+fi
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -44,3 +51,6 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 eval $(thefuck --alias)
+
+# Added by Windsurf
+export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"

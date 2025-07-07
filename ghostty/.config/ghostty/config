@@ -1,3 +1,4 @@
 theme = catppuccin-mocha
 font-family = CaskaydiaCove Nerd Font
 font-size = 12
+keybind = shift+enter=text:\n

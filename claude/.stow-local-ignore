@@ -1,0 +1,10 @@
+# Ignore computer-specific directories
+projects
+todos
+statsig
+
+# Ignore any temporary files
+.*\.tmp
+.*\.swp
+.*~
+\.DS_Store

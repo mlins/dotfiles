@@ -22,7 +22,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
-export EDITOR="code"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # history setup
 HISTFILE=$HOME/.zhistory

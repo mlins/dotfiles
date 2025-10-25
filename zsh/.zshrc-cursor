@@ -23,7 +23,8 @@ alias ll='ls -la'
 alias la='ls -la'
 
 # Editor
-export EDITOR="code"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Windsurf path
 export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"

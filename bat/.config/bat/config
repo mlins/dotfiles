@@ -1,0 +1,18 @@
+# bat configuration file
+# See 'bat --help' for more information
+
+# Set the theme (Catppuccin Mocha to match other dotfile themes)
+--theme="Catppuccin Mocha"
+
+# Show line numbers, Git modifications and file header
+--style="numbers,changes,header"
+
+# Use italic text on the terminal
+--italic-text=always
+
+# Add mouse scrolling support in less (does not work with all terminals)
+--paging=auto
+
+# Syntax mappings
+--map-syntax "*.ino:C++"
+--map-syntax ".ignore:Git Ignore"

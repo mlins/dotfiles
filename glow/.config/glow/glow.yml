@@ -1,0 +1,30 @@
+# Glow configuration file
+# See: https://github.com/charmbracelet/glow
+
+# NOTE: Due to a known bug in glow (https://github.com/charmbracelet/glow/issues/802),
+# custom JSON style paths in the config file don't work properly in TUI mode.
+# Workaround: Use the shell alias defined in .zshrc which uses the -s flag directly.
+#
+# To use a different variant, change the GLOW_STYLE environment variable or update the alias:
+# - catppuccin-latte.json (light theme)
+# - catppuccin-frappe.json
+# - catppuccin-macchiato.json
+# - catppuccin-mocha.json (default)
+
+# The style config below may not work properly due to the bug mentioned above
+style: "/Users/mattlins/.config/glow/styles/catppuccin-mocha.json"
+
+# Show local markdown files by default
+local: true
+
+# Use mouse wheel to scroll
+mouse: true
+
+# Use pager for long documents
+pager: true
+
+# Word-wrap at specific width (0 = terminal width)
+width: 0
+
+# Preserve new lines in markdown
+preserveNewLines: false

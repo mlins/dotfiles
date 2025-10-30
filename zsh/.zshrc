@@ -51,6 +51,11 @@ alias lta='lt -a'
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+# ---- Glow (markdown renderer) ----
+# Workaround for glow bug: custom JSON styles in config file don't work properly
+# See: https://github.com/charmbracelet/glow/issues/802
+alias glow='/opt/homebrew/bin/glow -s ~/.config/glow/styles/catppuccin-mocha.json'
+
 eval $(thefuck --alias)
 
 # Added by Windsurf

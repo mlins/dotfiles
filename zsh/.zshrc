@@ -60,3 +60,6 @@ eval $(thefuck --alias)
 
 # Added by Windsurf
 export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
+
+# Source local machine-specific config if it exists
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

@@ -58,9 +58,6 @@ alias glow='/opt/homebrew/bin/glow -s ~/.config/glow/styles/catppuccin-mocha.jso
 
 eval $(thefuck --alias)
 
-# Added by Windsurf
-export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
-
 # Source local machine-specific config if it exists
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
@@ -68,3 +65,5 @@ export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
 export PATH="$PATH:/Users/mattlins/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Claude Code (native binary)
+export PATH="$HOME/.local/bin:$PATH"

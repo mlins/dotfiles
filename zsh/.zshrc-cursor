@@ -26,9 +26,6 @@ alias la='ls -la'
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Windsurf path
-export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
-
 # Disable any complex features that might interfere
 unsetopt beep
 setopt no_auto_menu

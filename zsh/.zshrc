@@ -63,3 +63,8 @@ export PATH="/Users/mattlins/.codeium/windsurf/bin:$PATH"
 
 # Source local machine-specific config if it exists
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mattlins/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -15,3 +15,8 @@ fi
 if [ -f "$HOME/.aftman/env" ]; then
   . "$HOME/.aftman/env"
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mattlins/.lmstudio/bin"
+# End of LM Studio CLI section
+

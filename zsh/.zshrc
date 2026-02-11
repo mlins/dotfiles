@@ -2,11 +2,9 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-# For Cursor: Use dedicated minimal zshrc to avoid agent hanging while keeping dev tools
-if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-  source ~/.zshrc-cursor
-  return
-fi
+# Source local machine-specific config if it exists (early for Cursor detection)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -n "$ZSHRC_EARLY_RETURN" ]] && return
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -57,9 +55,6 @@ alias cd="z"
 alias glow='/opt/homebrew/bin/glow -s ~/.config/glow/styles/catppuccin-mocha.json'
 
 eval $(thefuck --alias)
-
-# Source local machine-specific config if it exists
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/mattlins/.lmstudio/bin"
